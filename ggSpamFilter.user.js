@@ -65,6 +65,11 @@ var aBlacklistWords = [].concat(
   "gifts?",
   "u"
 );
+var oBlacklistWords = {
+  "prescription drugs": prescriptionDrugsWords,
+  "price": "\\$\\d+",
+  "other": ["gifts?", "u"]
+};
 
 /**
  * Infixes (sub-strings) that are indicative of spam (case-insensitive)
@@ -102,7 +107,7 @@ var prescriptionDrugsInfixes = [
 var pr0nInfixes = [
   "girls?",
   "nude",
-  "sexy?",
+  "sexy?"
 ];
 var aBlacklistInfixes = [].concat(
   counterfeitInfixes,
@@ -114,6 +119,18 @@ var aBlacklistInfixes = [].concat(
   "paypal",
   "terrorism"
 );
+var oBlacklistInfixes = {
+  "counterfeit": counterfeitInfixes,
+  "prescription drugs": prescriptionDrugsInfixes,
+  "pr0n": pr0nInfixes,
+  "other": [
+    "adsense",
+    "fake\\s*id\\s*card", "fake\\s*passports",
+    "online\\s*roulette",
+    "paypal",
+    "terrorism"
+  ]
+};
 
 /* DO NOT modify anything below this (unless you know what you are doing) */
 

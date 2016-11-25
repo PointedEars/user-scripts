@@ -21,4 +21,4 @@ Add them to your favorite user script manager, for example:
     Firefox, Chrome, [Opera](http://www.opera.com/), and [Apple Safari](http://www.apple.com/safari/)
   - [Ninjakit](http://os0x.hatenablog.com/entry/20100612/1276330696) for Chrome and Safari
 
-See [Wikipedia: Greasemonkey](https://en.wikipedia.org/wiki/Greasemonkey) for more.
+See ![Wikipedia](https://upload.wikimedia.org/wikipedia/commons/b/b0/Wikipedia-favicon.png) [Greasemonkey](https://en.wikipedia.org/wiki/Greasemonkey) for more.

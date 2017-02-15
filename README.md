@@ -1,4 +1,4 @@
-# User scripts for Web browsers
+# Userscripts for Web browsers
 
 | Script | Purpose |
 |------|---------|
@@ -10,7 +10,7 @@
 
 ## Usage
 
-Add them to your favorite user script manager, for example:
+Add them to your favorite userscript manager, for example:
 
   - [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
     or [Control Freak](https://chrome.google.com/webstore/detail/control-freak/jgnchehlaggacipokckdlbdemfeohdhc/)

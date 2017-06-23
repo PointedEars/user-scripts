@@ -1,7 +1,7 @@
 # Userscripts for Web browsers
 
 | Script | Purpose |
-|------|---------|
+|:-----|:--------|
 | [`enableAutocomplete.user.js`](enableAutocomplete.user.js) | Re-enables autocomplete in login forms |
 | [`ggFormatter.user.js`](ggFormatter.user.js) | Formats Google Groups messages |
 | [`ggSpamFilter.user.js`](ggSpamFilter.user.js) | Configurable spam filter for Google Groups (*until a better Web interface comes along ;-))* |

@@ -1,16 +1,16 @@
 // ==UserScript==
 // @name         ggFormatter
+// @version      0.2.2
+// @author       Thomas ‘PointedEars’ Lahn <js@PointedEars.de>
 // @namespace    http://PointedEars.de/
-// @version      0.2.1
 // @description  Formats Google Groups postings
-// @author       You
 // @match        https://groups.google.com/*
 // @grant        none
 // ==/UserScript==
 
 var s = document.createElement("style");
 s.type = "text/css";
-var selector = ".IVILX2C-tb-P div div div";
+var selector = ".F0XO1GC-nb-P div div div";
 s.appendChild(document.createTextNode(selector + " { font-family: monospace; }"));
 document.head.appendChild(s);
 

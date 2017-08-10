@@ -1,7 +1,7 @@
 /**
  * ggSpamFilter -- Junk filter for Google Groups
  *
- * Copyright (C) 2010, 2016, 2017  Thomas Lahn &lt;cljs@PointedEars.de&gt;
+ * Copyright (C) 2010, 2016, 2017  Thomas 'PointedEars' Lahn &lt;cljs@PointedEars.de&gt;
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,15 +19,16 @@
 
 // ==UserScript==
 // @name         ggSpamFilter
-// @version      0.2.1
-// @namespace    http://PointedEars.de/scripts/Greasemonkey
+// @version      0.2.2
 // @description  Junk filter for Google Groups
-// @include      http*://groups.google.*/*
-// @require     ../object.js
-// @require     ../regexp.js
-// @require     ../dom.js
-// @require     ../dom/css.js
+// @author       Thomas ‘PointedEars’ Lahn <cljs@PointedEars.de>
+// @namespace    http://PointedEars.de/scripts/Greasemonkey
+// @require      http://PointedEars.de/scripts/object.js
+// @require      http://PointedEars.de/scripts/regexp.js
+// @require      http://PointedEars.de/scripts/dom.js
+// @require      http://PointedEars.de/scripts/dom/css.js
 // @not_yet_required     ../httprequest.js
+// @include      http*://groups.google.*/*
 // ==/UserScript==
 
 /*

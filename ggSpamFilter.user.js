@@ -133,7 +133,10 @@ var oBlacklistInfixes = {
   ]
 };
 
-/* DO NOT modify anything below this (unless you know what you are doing) */
+/* DO NOT modify anything below this line (unless you know what you are doing) */
+
+/* Google changes this frequently */
+var tableClass = "F0XO1GC-p-V";
 
 var intv = window.setInterval(function () {
   var threadList = document.getElementById("f-ic");
@@ -226,7 +229,7 @@ var intv = window.setInterval(function () {
       }
 
       var
-        table = threadList.querySelector(".F0XO1GC-p-V"),
+        table = threadList.querySelector("." + tableClass),
         rows = table.rows,
         prevSpamCount = 0;
 

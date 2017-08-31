@@ -19,7 +19,7 @@
 
 // ==UserScript==
 // @name         ggSpamFilter
-// @version      0.2.2
+// @version      0.2.3
 // @description  Junk filter for Google Groups
 // @author       Thomas ‘PointedEars’ Lahn <cljs@PointedEars.de>
 // @namespace    http://PointedEars.de/scripts/Greasemonkey
@@ -228,8 +228,14 @@ var intv = window.setInterval(function () {
         (document.head || document.getElementsByTagName("head")[0]).appendChild(styleSheet);
       }
 
+      var table = threadList.querySelector("." + tableClass);
+      if (!table || table.tagName.toLowerCase() != "table")
+      {
+        jsx.error("ggSpamFilter: Table with class '" + tableClass + "' not found. Please report this issue.");
+        return;
+      }
+
       var
-        table = threadList.querySelector("." + tableClass),
         rows = table.rows,
         prevSpamCount = 0;
 

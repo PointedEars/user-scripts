@@ -89,7 +89,7 @@ var prescriptionDrugsInfixes = [
   "alesse", "amiodarone", "allegra", "alprazolam", "amoxicillin",
   "aricept", "ativan",
   "baclofen", "bactrim", "benzos", "bipasa", "buspar", "butalbital",
-  "carisoprodol", "caverta", "celexa", "cialis", "clonazepam", "codeine",
+  "carisoprodol", "cipro", "captopril", "caverta", "celexa", "cialis", "clonazepam", "codeine",
   "dapoxetine", "desyrel", "diazepam", "diflucan", "diovan", "doxycycline",
   "fioricet", "fosamax",
   "geodon", "glucophage",

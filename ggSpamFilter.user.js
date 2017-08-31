@@ -19,7 +19,7 @@
 
 // ==UserScript==
 // @name         ggSpamFilter
-// @version      0.2.3
+// @version      0.2.4
 // @description  Junk filter for Google Groups
 // @author       Thomas ‘PointedEars’ Lahn <cljs@PointedEars.de>
 // @namespace    http://PointedEars.de/scripts/Greasemonkey
@@ -27,7 +27,6 @@
 // @require      http://PointedEars.de/scripts/regexp.js
 // @require      http://PointedEars.de/scripts/dom.js
 // @require      http://PointedEars.de/scripts/dom/css.js
-// @not_yet_required     ../httprequest.js
 // @include      http*://groups.google.*/*
 // ==/UserScript==
 
@@ -121,26 +120,6 @@ var aBlacklistInfixes = [].concat(
   "paypal",
   "terrorism"
 );
-
-/* TODO: Use keys to give more meaningful message for a match (PERF?) */
-var oBlacklistWords = {
-  "prescription drugs": prescriptionDrugsWords,
-  "price": /\$\d+/,
-  "other": [/gifts?/, "u"]
-};
-
-var oBlacklistInfixes = {
-  "counterfeit": counterfeitInfixes,
-  "prescription drugs": prescriptionDrugsInfixes,
-  "pr0n": pr0nInfixes,
-  "other": [
-    "adsense",
-    /fake\s*id\s*card/, /fake\s*passports/,
-    /online\s*roulette/,
-    "paypal",
-    "terrorism"
-  ]
-};
 
 /* DO NOT modify anything below this line (unless you know what you are doing) */
 

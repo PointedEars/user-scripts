@@ -33,19 +33,20 @@
 
 /*
  * Class name to be set on rows for spam threads (spam rows);
- * use in user stylesheet to format spam as you want
+ * if you set “formatSpam = false” below, you can use it
+ * in a user stylesheet to format spam
  */
 var spamClass = "is-spam";
 
 /*
- * Set this to “true” to format spam rows (see stylesheet definition below);
- * no user stylesheet modifications are necessary.
+ * Set this to “true” to format spam rows according to “spamStyle”
+ * below; no user stylesheet modifications are necessary then.
  */
 var formatSpam = true;
 
 /*
  * Stylesheet to be applied to a spam row if formatSpam === true;
- * Note that you break GG’s continuous scrolling if you use "display: none"
+ * note that you break GG’s continuous scrolling if you use "display: none".
  */
 var spamStyle = "opacity: 0.25";
 
@@ -60,6 +61,7 @@ var prescriptionDrugsWords = [
   "soma",
   "ultram"
 ];
+
 var aBlacklistWords = [].concat(
   prescriptionDrugsWords,
   "\\$\\d+", /* price in dollars */
@@ -81,6 +83,7 @@ var counterfeitInfixes = [
   "sell", "shoes?(\\s*trade)?",
   "wholesale"
 ];
+
 var prescriptionDrugsInfixes = [
   "accupril", "accutane", "acyclovir", "actos", "adderall", "adipex",
   "alesse", "amiodarone", "allegra", "alprazolam", "amoxicillin",
@@ -120,6 +123,14 @@ var aBlacklistInfixes = [].concat(
   "paypal",
   "terrorism"
 );
+
+/* TODO: Use keys to give more meaningful message for a match (PERF?) */
+var oBlacklistWords = {
+  "prescription drugs": prescriptionDrugsWords,
+  "price": /\$\d+/,
+  "other": [/gifts?/, "u"]
+};
+
 var oBlacklistInfixes = {
   "counterfeit": counterfeitInfixes,
   "prescription drugs": prescriptionDrugsInfixes,

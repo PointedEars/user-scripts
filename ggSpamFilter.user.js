@@ -64,23 +64,19 @@ var prescriptionDrugsWords = [
 
 var aBlacklistWords = [].concat(
   prescriptionDrugsWords,
-  "\\$\\d+", /* price in dollars */
-  "gifts?",
+  /\$\d+/, /* price in dollars */
+  "criminale",
+  /gifts?/,
   "u"
 );
-var oBlacklistWords = {
-  "prescription drugs": prescriptionDrugsWords,
-  "price": "\\$\\d+",
-  "other": ["gifts?", "u"]
-};
 
 /**
  * Infixes (sub-strings) that are indicative of spam (case-insensitive)
  */
 var counterfeitInfixes = [
   "armani",
-  "calvin\\s*klein",
-  "sell", "shoes?(\\s*trade)?",
+  /calvin\s*klein/,
+  "sell", /shoes?(\s*trade)?/,
   "wholesale"
 ];
 
@@ -108,18 +104,20 @@ var prescriptionDrugsInfixes = [
   "xanax", "xenical",
   "zithromax", "zolpidem", "zovirax", "zyprexa"
 ];
+
 var pr0nInfixes = [
-  "girls?",
+  /girls?/,
   "nude",
-  "sexy?"
+  /sexy?/
 ];
+
 var aBlacklistInfixes = [].concat(
   counterfeitInfixes,
   prescriptionDrugsInfixes,
   pr0nInfixes,
   "adsense",
-  "fake\\s*id\\s*card", "fake\\s*passports",
-  "online\\s*roulette",
+  /fake\s*id\s*card/, /fake\s*passports/,
+  /online\s*roulette/,
   "paypal",
   "terrorism"
 );
@@ -137,8 +135,8 @@ var oBlacklistInfixes = {
   "pr0n": pr0nInfixes,
   "other": [
     "adsense",
-    "fake\\s*id\\s*card", "fake\\s*passports",
-    "online\\s*roulette",
+    /fake\s*id\s*card/, /fake\s*passports/,
+    /online\s*roulette/,
     "paypal",
     "terrorism"
   ]
@@ -163,7 +161,10 @@ var intv = window.setInterval(function () {
     var dom = jsx.dom;
 
     Array.prototype.toAlternation = function () {
-      return this.slice().sort(function (a, b) {
+      return this.slice().map(function (el) {
+        /* Map RegExp to String, escape the rest */
+        return (typeof el.source == "string") ? el.source : jsx.regexp.escape(String(el));
+      }).sort(function (a, b) {
         /* Longest match wins */
         return b.length - a.length;
       }).join("|");

@@ -1,5 +1,5 @@
 /**
- * ggSpamFilter -- Junk filter for Google Groups
+ * ggJunkFilter -- Junk filter for Google Groups
  *
  * Copyright (C) 2010, 2016, 2017  Thomas 'PointedEars' Lahn &lt;cljs@PointedEars.de&gt;
  *
@@ -18,8 +18,8 @@
  */
 
 // ==UserScript==
-// @name         ggSpamFilter
-// @version      0.2.4
+// @name         ggJunkFilter
+// @version      0.2.5
 // @description  Junk filter for Google Groups
 // @author       Thomas ‘PointedEars’ Lahn <cljs@PointedEars.de>
 // @namespace    http://PointedEars.de/scripts/Greasemonkey
@@ -121,10 +121,21 @@ var aBlacklistInfixes = [].concat(
   "terrorism"
 );
 
+var aKillfile = [
+  /*
+   * Add lusers to killfile here (String or RegExp, case-insensitive);
+   * note that Google Groups obfuscates e-mail addresses for display.
+   */
+  // "joe user",
+  // /^(nym|shifting|troll)$/
+];
+
 /* DO NOT modify anything below this line (unless you know what you are doing) */
 
 /* Google changes this frequently */
 var tableClass = "F0XO1GC-p-V";
+var subjectClass = "F0XO1GC-Jb-g";
+var fromSelector = ".F0XO1GC-p-f span:first-child";
 
 var intv = window.setInterval(function () {
   var threadList = document.getElementById("f-ic");
@@ -156,9 +167,13 @@ var intv = window.setInterval(function () {
 
       rxInfixes = (aBlacklistInfixes.length > 0)
         ? new RegExp("(?:" + aBlacklistInfixes.toAlternation() + ")", "i")
+        : null,
+
+      rxKillfile = (aKillfile.length > 0)
+        ? new RegExp("(?:" + aKillfile.toAlternation() + ")", "i")
         : null;
 
-    if (rxWords || rxInfixes)
+    if (rxWords || rxInfixes || rxKillfile)
     {
       /**
        * Marks a row as spam
@@ -236,11 +251,13 @@ var intv = window.setInterval(function () {
 
         [].forEach.call(rows, function (row) {
           var
-            link = row.querySelector("a"),
+            link = row.querySelector("a." + subjectClass),
             subject = link.textContent,
+            from = row.querySelector(fromSelector).textContent,
             mWord = subject.match(rxWords),
             mInfix = subject.match(rxInfixes),
-            m = mWord || mInfix;
+            mKillfile = from.match(rxKillfile),
+            m = mWord || mInfix || mKillfile;
 
           if (m)
           {
@@ -248,9 +265,18 @@ var intv = window.setInterval(function () {
             {
               markAsSpam(row, link);
 
-              jsx.dmsg('ggSpamFilter:'
-                + ' Filtered "' + subject + '"\nbecause it contains'
-                + (mWord ? ' the word' : '') + ' "' + m[0] + '".', 'info');
+              if (mWord || mInfix)
+              {
+                jsx.dmsg('ggSpamFilter:'
+                         + ' Filtered "' + subject + '"\nbecause it contains'
+                         + (mWord ? ' the word' : '') + ' "' + m[0] + '".', 'info');
+              }
+              else
+              {
+                jsx.dmsg('ggSpamFilter:'
+                         + ' Filtered "' + subject + '"\nbecause it was posted by'
+                         + ' "' + from + '".', 'info');
+              }
             }
 
             spamCount++;

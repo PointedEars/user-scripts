@@ -8,9 +8,9 @@
 // @grant        none
 // ==/UserScript==
 
+var selector = ".F0XO1GC-nb-P";
 var s = document.createElement("style");
 s.type = "text/css";
-var selector = ".F0XO1GC-nb-P div div div";
 s.appendChild(document.createTextNode(selector + " { font-family: monospace; }"));
 document.head.appendChild(s);
 

@@ -3,7 +3,7 @@
 | Script | Purpose |
 |:-----|:--------|
 | [`enableAutocomplete.user.js`](enableAutocomplete.user.js) | Re-enables autocomplete in login forms |
-| [`ggFormatter.user.js`](ggFormatter.user.js) | Formats Google Groups messages |
+| [`ggFormatter.user.js`](#ggFormatter.user.js) | Formats Google Groups messages |
 | [`ggSpamFilter.user.js`](ggSpamFilter.user.js) | Configurable spam filter for Google Groups (*until a better Web interface comes along ;-))* |
 | [`googleScholar.user.js`](googleScholar.user.js) | Adds Google Scholar to Google Search’s “More” menu |
 | [`zattoo.user.js`](zattoo.user.js) | Tweaks to [Zattoo](http://zattoo.com/)’s Web interface (proof-of-concept, now obsoleted by built-in features) |
@@ -22,3 +22,14 @@ Add them to your favorite userscript manager, for example:
   - [Ninjakit](http://os0x.hatenablog.com/entry/20100612/1276330696) for Chrome and Safari
 
 See ![Wikipedia](https://upload.wikimedia.org/wikipedia/commons/b/b0/Wikipedia-favicon.png) [Greasemonkey](https://en.wikipedia.org/wiki/Greasemonkey) for more.
+
+## Details
+
+### [`ggFormatter.user.js`](ggFormatter.user.js)
+
+Modifies the display of Google Groups postings to
+
+- use `the monospaced font` specified in the Web browser settings (useful for source code and ASCII art);
+- use **bold style** to format text enclosed in asterisks (“\*…\*”);
+- use *italic style* to format text enclosed in forward slashes (“/…/”), and
+- underline text enclosed in underscores (“\_…\_”).

@@ -3,7 +3,7 @@
 | Script | Purpose |
 |:-----|:--------|
 | [`enableAutocomplete.user.js`](enableAutocomplete.user.js) | Re-enables autocomplete in login forms |
-| [`ggFormatter.user.js`](#ggFormatter.user.js) | Formats Google Groups messages |
+| [`ggFormatter.user.js`](#ggformatteruserjs) | Formats Google Groups messages |
 | [`ggSpamFilter.user.js`](ggSpamFilter.user.js) | Configurable spam filter for Google Groups (*until a better Web interface comes along ;-))* |
 | [`googleScholar.user.js`](googleScholar.user.js) | Adds Google Scholar to Google Search’s “More” menu |
 | [`zattoo.user.js`](zattoo.user.js) | Tweaks to [Zattoo](http://zattoo.com/)’s Web interface (proof-of-concept, now obsoleted by built-in features) |

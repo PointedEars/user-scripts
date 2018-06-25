@@ -33,3 +33,5 @@ Modifies the display of Google Groups postings to
 - use **bold style** to format text enclosed in asterisks (“\*…\*”);
 - use *italic style* to format text enclosed in forward slashes (“/…/”), and
 - underline text enclosed in underscores (“\_…\_”).
+
+[↑ Usage](#usage)

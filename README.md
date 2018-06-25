@@ -15,7 +15,7 @@ Add them to your favorite userscript manager, for example:
   - [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
     or [Control Freak](https://chrome.google.com/webstore/detail/control-freak/jgnchehlaggacipokckdlbdemfeohdhc/)
     for [Chromium](http://www.chromium.org/Home)/[Google Chrome](https://www.google.com/chrome/)
-    (Chromium also [supports userscripts natively by converting them to extensions](http://www.chromium.org/developers/design-documents/user-scripts/))
+    (Chromium also [supports userscripts natively by converting them to extensions](http://www.chromium.org/developers/design-documents/user-scripts/)). If you use Tampermonkey, you can select the “Raw” button in GitHub’s source code view to install a userscript.
   - [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) for [Mozilla Firefox](http://getfirefox.com/)
   - [Kango](http://kangoextensions.com/) for [Microsoft Internet Explorer](http://microsoft.com/ie),
     Firefox, Chrome, [Opera](http://www.opera.com/), and [Apple Safari](http://www.apple.com/safari/)
